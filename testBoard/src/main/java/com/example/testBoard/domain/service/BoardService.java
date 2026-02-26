@@ -6,6 +6,8 @@ import com.example.testBoard.domain.repository.BoardRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class BoardService {
@@ -19,5 +21,9 @@ public class BoardService {
                 .author(boardRequestDto.getAuthor())
                 .build();
         boardRepository.save(board);
+    }
+
+    public List<Board> getList(){
+        return boardRepository.findAll();
     }
 }

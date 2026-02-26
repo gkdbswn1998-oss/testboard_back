@@ -1,9 +1,12 @@
 package com.example.testBoard.domain.controller;
 
 import com.example.testBoard.domain.dto.BoardRequestDto;
+import com.example.testBoard.domain.entity.Board;
 import com.example.testBoard.domain.service.BoardService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequiredArgsConstructor
@@ -17,5 +20,10 @@ public class BoardController {
     public String savePost(@RequestBody BoardRequestDto boardRequestDto){
         boardService.savePost(boardRequestDto);
         return "게시글 등록 성공";
+    }
+
+    @GetMapping("/list")
+    public List<Board> getList(){
+        return boardService.getList();
     }
 }

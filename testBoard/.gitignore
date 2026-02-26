@@ -35,3 +35,8 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### 개인 설정 파일 제외 ###
+src/main/resources/application.properties
+# 만약 yml 파일을 쓰신다면 아래 내용 추가
+# src/main/resources/application.yml
