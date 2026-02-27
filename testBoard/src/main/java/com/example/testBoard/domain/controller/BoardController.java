@@ -26,4 +26,9 @@ public class BoardController {
     public List<Board> getList(){
         return boardService.getList();
     }
+
+    @GetMapping("{id}")
+    public Board getOneList(@PathVariable Long id){
+        return boardService.getOneList(id);
+    }
 }
