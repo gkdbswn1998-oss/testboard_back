@@ -31,18 +31,4 @@ public class BoardService {
         return boardRepository.findById(id)
                 .orElse(null);
     }
-
-    public void deletePost(Long id){
-         boardRepository.deleteById(id);
-    }
-
-    public Board updatePost(Long id, BoardRequestDto boardRequestDto) {
-        Board board = boardRepository.findById(id)
-                .orElse(null);
-        if (board != null) {
-            board.updatePost(boardRequestDto.getTitle(), boardRequestDto.getContent());
-            boardRepository.save(board);
-        }
-        return null;
-    }
 }
