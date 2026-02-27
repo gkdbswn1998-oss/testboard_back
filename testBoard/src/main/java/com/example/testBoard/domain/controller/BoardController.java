@@ -27,8 +27,18 @@ public class BoardController {
         return boardService.getList();
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public Board getOneList(@PathVariable Long id){
         return boardService.getOneList(id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deletePost(@PathVariable Long id){
+         boardService.deletePost(id);
+    }
+
+    @PutMapping("/update/{id}")
+    public Board updatePost(@PathVariable Long id,@RequestBody BoardRequestDto boardRequestDto){
+        return boardService.updatePost(id,boardRequestDto);
     }
 }
